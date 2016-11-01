@@ -20,6 +20,7 @@
 官方文档对于栅格系统的解释
   ● “行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（paddin">
 <meta property="og:image" content="http://p1.bpimg.com/567571/feb7eb25a4ea3b67.png">
+<meta property="og:image" content="http://p1.bpimg.com/567571/822bccc2309718c6.png">
 <meta property="og:image" content="http://p1.bpimg.com/567571/2f7b1d5ba0536d85.png">
 <meta property="og:image" content="http://p1.bpimg.com/567571/5c4aed89472f7173.png">
 <meta property="og:image" content="http://p1.bpimg.com/567571/07efe3751f081f9f.png">
@@ -32,7 +33,7 @@
 <meta property="og:image" content="http://p1.bqimg.com/567571/64d14f38b74c922f.png">
 <meta property="og:image" content="http://p1.bqimg.com/567571/7a7f384450f2fd2d.png">
 <meta property="og:image" content="http://p1.bqimg.com/567571/f2d325af3aa1805b.png">
-<meta property="og:updated_time" content="2016-11-01T14:48:25.881Z">
+<meta property="og:updated_time" content="2016-11-01T14:58:22.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="栅格系统概述">
 <meta name="twitter:description" content="栅格系统概述
@@ -293,10 +294,10 @@
 <p>  ● 负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。</p>
 <p>  ● 栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 .col-xs-4 来创建。</p>
 <p>  ● 如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。</p>
-<p>  ● 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-<em> 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-</em> 不存在， 也影响大屏幕设备。</p>
+<p>  ● 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-  栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-* 不存在， 也影响大屏幕设备。</p>
 <blockquote>
 <h2 id="列偏移"><a href="#列偏移" class="headerlink" title="列偏移"></a>列偏移</h2></blockquote>
-<p>使用“col-档位-offset-偏移栅格量”来设置列的偏移。<br>列偏移的原理是为列添加了类名相应数量的margin-left，例如：<br>  ● 为一个列设置col-档位-offset-5，那么它的margin-left就是41.66666667%（100%/12<em>5）<br>  ● 为一个列设置col-档位-offset-2，那么它的margin-left就是16.66666667%（100%/12</em>2）</p>
+<p>使用“col-档位-offset-偏移栅格量”来设置列的偏移。<br>列偏移的原理是为列添加了类名相应数量的margin-left，例如：<br>  ● 为一个列设置col-档位-offset-5，那么它的margin-left就是41.66666667%（100%/12×5）<br>  ● 为一个列设置col-档位-offset-2，那么它的margin-left就是16.66666667%（100%/12×2）</p>
 <blockquote>
 <h2 id="列嵌套"><a href="#列嵌套" class="headerlink" title="列嵌套"></a>列嵌套</h2></blockquote>
 <p>列可以进行嵌套，也就是说，每一个列都是一个栅格系统，没一个列中都拥有12个栅格。所以，下面的写法可以在列中嵌套列：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4"&gt;Level 1&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-8"&gt;</div><div class="line">            &lt;div class="row"&gt;</div><div class="line">                &lt;div class="col-md-6"&gt;Level 2&lt;/div&gt;</div><div class="line">                &lt;div class="col-md-6"&gt;Level 2&lt;/div&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
@@ -304,16 +305,27 @@
 <blockquote>
 <h2 id="列推拉（列排序）"><a href="#列推拉（列排序）" class="headerlink" title="列推拉（列排序）"></a>列推拉（列排序）</h2></blockquote>
 <p>使用“col-档位-pull-拉栅格量”来往前拉一定数量的栅格，使用“col-档位-push-推栅格量”来往后推一定数量的栅格。使用推拉和使用偏移不同：<br>  ● 使用偏移时，如果当前行装不下所有的列（宽度溢出），那么装不下的列将会换行<br>  ● 使用推拉时，将应用推拉的列变为相对定位，再left一定的量</p>
-<p>使用偏移：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div class="container"&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4"&gt;column&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-8 col-md-offset-1"&gt;column&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">![[图片]](http://p1.bpimg.com/567571/822bccc2309718c6.png)</div><div class="line"></div><div class="line">使用推拉：</div><div class="line">&lt;div class="container"&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4"&gt;column&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-8 col-md-push-1"&gt;column&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用偏移：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4"&gt;column&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-8 col-md-offset-1"&gt;column&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="http://p1.bpimg.com/567571/822bccc2309718c6.png" alt="[图片]"></p>
+<blockquote>
+<p>使用推拉：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4"&gt;column&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-8 col-md-push-1"&gt;column&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
 <p><img src="http://p1.bpimg.com/567571/2f7b1d5ba0536d85.png" alt="[图片]"></p>
 <p>如果使用的恰当的推拉，就可以将列进行先后排序。例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4 col-md-push-8"&gt;3rd show, 1st wrote&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-2 col-md-push-2"&gt;2nd show, 2nd wrote&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-6 col-md-pull-6"&gt;1st show, 3rd wrote&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
 <p><img src="http://p1.bpimg.com/567571/5c4aed89472f7173.png" alt="[图片]"></p>
 <blockquote>
-<h2 id="自己总结的栅格使用注意事项"><a href="#自己总结的栅格使用注意事项" class="headerlink" title="自己总结的栅格使用注意事项"></a>自己总结的栅格使用注意事项</h2><h3 id="1-清理浮动的情况"><a href="#1-清理浮动的情况" class="headerlink" title="1.清理浮动的情况"></a>1.清理浮动的情况</h3></blockquote>
-<p>当栅格不等高时，在高分辨率设备显示正常的栅格可能在低分辨率设备显示错位，例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;高度很高的栅格&lt;br&gt;高度很高的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="自己总结的栅格使用注意事项"><a href="#自己总结的栅格使用注意事项" class="headerlink" title="自己总结的栅格使用注意事项"></a>自己总结的栅格使用注意事项</h2></blockquote>
+<h3 id="1-清理浮动的情况"><a href="#1-清理浮动的情况" class="headerlink" title="1.清理浮动的情况"></a>1.清理浮动的情况</h3><p>当栅格不等高时，在高分辨率设备显示正常的栅格可能在低分辨率设备显示错位，例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;高度很高的栅格&lt;br&gt;高度很高的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
 <p>大屏幕（lg/Larger Desktops）档：</p>
+</blockquote>
 <p><img src="http://p1.bpimg.com/567571/07efe3751f081f9f.png" alt="[图片]"></p>
+<blockquote>
 <p>中等屏幕（md/Desktops）档：</p>
+</blockquote>
 <p><img src="http://p1.bqimg.com/567571/2e27f2c1ca843a6b.png" alt="[图片]"><br>可以看到，在中等屏幕（md/Desktops）档，最后一个正常的栅格被“堵”在了高度很高的栅格后面，而没有形成新的行（row），此时，应该在恰当的位置添加清理浮动的元素，清除第一行的浮动。</p>
 <p>那么哪里才是“恰当的位置”呢？对应档位的每一行后即是恰当的位置。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;高度很高的栅格&lt;br&gt;高度很高的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">        &lt;div class="clearfix visible-md-block"&gt;&lt;/div&gt; &lt;-- 清理浮动的元素 --&gt;</div><div class="line">        &lt;div class="col-md-4 col-lg-3"&gt;正常的栅格&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <p><img src="http://p1.bqimg.com/567571/f79c7057860bdac4.png" alt="[图片]"></p>
@@ -322,15 +334,23 @@
 <h3 id="2-低档位设置的offset在高档位不需要时记得重置"><a href="#2-低档位设置的offset在高档位不需要时记得重置" class="headerlink" title="2.低档位设置的offset在高档位不需要时记得重置"></a>2.低档位设置的offset在高档位不需要时记得重置</h3><p>Bootstrap栅格系统的机制是：栅格类适用于与屏幕宽度大于或等于分界点大小的设备。也就是说，在某个档位设置了栅格类，那么这个类将作用于自身档位和大于自身档位的情况。举例来说，如果为一个元素设置了col-md-4，那么相当于同时为其设置了col-md-4和col-lg-4.</p>
 <p>因此，在低档位需要offset而高档位不需要offset的情况下，记得手动将高档位的offset重置为需要的值。</p>
 <p>下面两段代码分别是没有进行偏移重置和进行了偏移重置的例子。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-5 col-lg-6"&gt;column&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-5 col-lg-6 col-md-offset-2"&gt;column&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
 <p>中等屏幕（md/Desktops）档：</p>
+</blockquote>
 <p><img src="http://p1.bqimg.com/567571/c851cacaaf2ae50f.png" alt="[图片]"></p>
+<blockquote>
 <p>大屏幕（lg/Larger Desktops）档：</p>
+</blockquote>
 <p><img src="http://p1.bqimg.com/567571/7876b76cfa1a8143.png" alt="[图片]"></p>
 <p>由于在中等屏幕（md/Desktops）档为第二个列设置了offset-2，因此在大屏幕（lg/Larger Desktops）档两个列栅格都为6时，总宽度为6+2+6=14超过了12，因此第二列掉了下来。</p>
 <p>此时应该手动将大屏幕（lg/Larger Desktops）档的offset重置为0，如下代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="row"&gt;</div><div class="line">        &lt;div class="col-md-5 col-lg-6"&gt;column&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-5 col-lg-6 col-md-offset-2 col-lg-offset-0"&gt;column&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
 <p>中等屏幕（md/Desktops）档：</p>
+</blockquote>
 <p><img src="http://p1.bqimg.com/567571/6855b27e551163ce.png" alt="[图片]"></p>
+<blockquote>
 <p>大屏幕（lg/Larger Desktops）档：</p>
+</blockquote>
 <p><img src="http://p1.bqimg.com/567571/0cf6029f8152d7b6.png" alt="[图片]"></p>
 <h3 id="3-使用row来清除container和-col-的15px左右padding"><a href="#3-使用row来清除container和-col-的15px左右padding" class="headerlink" title="3.使用row来清除container和.col--的15px左右padding"></a>3.使用row来清除container和.col-<em>-</em>的15px左右padding</h3><p>.container和.col-<em>-</em>都拥有默认的15px的左右padding，<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .container &#123;</div><div class="line">        background-color: rgba(255,0,0,0.1);</div><div class="line">        line-height: 36px;</div><div class="line">    &#125;</div><div class="line">    .container &gt; [class^="col-"] &#123;</div><div class="line">        background-color: rgba(255,0,0,0.2);</div><div class="line">        border-left: 1px dashed #f00;</div><div class="line">        border-right: 1px dashed #f00;</div><div class="line">    &#125;</div><div class="line">    .container &gt; [class^="col-"] &gt; [class^="col-"] &#123;</div><div class="line">        background-color: rgba(255,0,0,0.3);</div><div class="line">        border-left: 1px dashed #000;</div><div class="line">        border-right: 1px dashed #000;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class="container"&gt;</div><div class="line">    &lt;div class="col-md-6 mark"&gt;</div><div class="line">        &lt;div class="col-md-4"&gt;col-md-4&lt;/div&gt;</div><div class="line">        &lt;div class="col-md-8"&gt;col-md-8&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class="col-md-6"&gt;col-md-6&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <p><img src="http://p1.bqimg.com/567571/64d14f38b74c922f.png" alt="[图片]"></p>
@@ -354,7 +374,7 @@
         <p><span>本文标题:</span><a href="/2015/08/13/栅格系统/">栅格系统概述</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 rungewu 的个人博客">rungewu</a></p>
         <p><span>发布时间:</span>2015年08月13日 - 22时36分</p>
-        <p><span>最后更新:</span>2016年11月01日 - 22时48分</p>
+        <p><span>最后更新:</span>2016年11月01日 - 22时58分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/08/13/栅格系统/" title="栅格系统概述">http://InfiniteBig.gitHub.io/2015/08/13/栅格系统/</a>
             <span class="copy-path" data-clipboard-text="原文: http://InfiniteBig.gitHub.io/2015/08/13/栅格系统/　　作者: rungewu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
