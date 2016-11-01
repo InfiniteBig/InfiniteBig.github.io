@@ -22,7 +22,7 @@ Quick">
     <link rel="alternative" href="/atom.xml" title="wrg的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="img/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -37,7 +37,7 @@ Quick">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
             
-            <img lazy-src="../sourse/img/avatar.png" class="js-avatar">
+            <img lazy-src="../source/img/avatar.png" class="js-avatar">
             
         </a>
 
@@ -116,7 +116,7 @@ Quick">
                             
                                 <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
                             
-                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://infinitebig.github.io/" title="GitHub"></a></li>
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/infinitebig.github.io/" title="GitHub"></a></li>
                             
                                 <li id="知乎"><a class="知乎" target="_blank" href="/zhihu" title="知乎"></a></li>
                             
@@ -175,7 +175,7 @@ Quick">
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img lazy-src="../sourse/img/avatar.png" class="js-avatar">
+                <img lazy-src="../source/img/avatar.png" class="js-avatar">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">rungewu</a></h1>
@@ -202,7 +202,7 @@ Quick">
                             
                                 <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
                             
-                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://infinitebig.github.io/" title="GitHub"></a></li>
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/infinitebig.github.io/" title="GitHub"></a></li>
                             
                                 <li id="知乎"><a class="知乎" target="_blank" href="/zhihu" title="知乎"></a></li>
                             
@@ -463,21 +463,30 @@ Quick">
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 10;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
+    <style>
+        body {
+          background: lightgray;
+        }
+        #container .left-col {
+          background: white;
+        }
+        .article-inner {
+          background: white;
+          margin-bottom: 1em;
+        }
+        .post-nav-button {
+          background: #ececec;
+        }
+        #header .header-nav .social #GitHub {
+          background-color: #bfd3ec;
+        }
+        #post-nav-button a {
+          background: rgba(215, 216, 215, .2);
+        }
+        .post-list {
+          background: white;
+        }
+    </style>
 
 
 
