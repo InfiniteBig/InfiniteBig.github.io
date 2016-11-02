@@ -19,7 +19,7 @@
 创建图表为了创建图表，我们要实例化一个Chart对象。为了完成前面的步骤，首先需要需要传入一个绘制图表的2d context。以下是案例。1234567&amp;lt;canvas id=&quot;myChart&quot; width=&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chart.js 中文文档">
-<meta property="og:url" content="http://yoursite.com/2015/05/12/Echarts使用/index.html">
+<meta property="og:url" content="https://infinitebig.github.io/2015/05/12/Echarts使用/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="此文档包含了用Chart.js创建漂亮图表的所有知识。
 起步
@@ -58,7 +58,7 @@
     <div class="brand">
       <a href="/" class="avatar"><img src="/img/avatar1.jpg"></a>
       <hgroup class="introduce">
-        <h5 class="nickname">wu runge</h5>
+        <h5 class="nickname">wurg</h5>
         <a href="mailto:1216569646@qq.com" title="1216569646@qq.com" class="mail">1216569646@qq.com</a>
       </hgroup>
     </div>
@@ -224,9 +224,9 @@
 <h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><ul>
 <li>引入Chart.js文件</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;script src=<span class="string">"Chart.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;script src=<span class="string">"Chart.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <ul>
-<li>创建图表<br>为了创建图表，我们要实例化一个Chart对象。为了完成前面的步骤，首先需要需要传入一个绘制图表的2d context。以下是案例。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"myChart"</span> width=<span class="string">"400"</span> height=<span class="string">"400"</span>&gt;&lt;/canvas&gt;</div><div class="line"></div><div class="line"><span class="comment">//Get the context of the canvas element we want to select</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.getElementById(<span class="string">"myChart"</span>).getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> myNewChart = <span class="keyword">new</span> Chart(ctx).PolarArea(data);</div></pre></td></tr></table></figure>
+<li>创建图表<br>为了创建图表，我们要实例化一个Chart对象。为了完成前面的步骤，首先需要需要传入一个绘制图表的2d context。以下是案例。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"myChart"</span> width=<span class="string">"400"</span> height=<span class="string">"400"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">//Get the context of the canvas element we want to select</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.getElementById(<span class="string">"myChart"</span>).getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> myNewChart = <span class="keyword">new</span> Chart(ctx).PolarArea(data);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>我们还可以用jQuery获取canvas的context。首先从jQuery集合中获取我们需要的DOM节点，然后在这个DOM节点上调用 getContext(“2d”) 方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Get context with jQuery - using jQuery's .get() method. </span></div><div class="line"></div><div class="line"><span class="keyword">var</span> ctx = $(<span class="string">"#myChart"</span>).get(<span class="number">0</span>).getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line"><span class="comment">//This will get the first returned node in the jQuery collection.</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myNewChart = <span class="keyword">new</span> Chart(ctx);</div></pre></td></tr></table></figure></p>
@@ -318,7 +318,7 @@
 <h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>所有现代浏览器和大部分手机浏览器都支持canvas(caniuse.com/canvas)。</p>
 <p>对于IE8及以下版本的浏览器，建议使用ExplorerCanvas见<a href="https://code.google.com/p/explorercanvas/。" target="_blank" rel="external">https://code.google.com/p/explorercanvas/。</a></p>
 <p>对于不支持canvas的IE会自动降级为VML格式。使用方法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;!--[if lte IE 8]&gt;</div><div class="line">    &lt;script src="excanvas.js"&gt;&lt;/script&gt;</div><div class="line">  &lt;![endif]--&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  <span class="xml"><span class="comment">&lt;!--[if lte IE 8]&gt;</span></span></div><div class="line">    &lt;script src="excanvas.js"&gt;&lt;/script&gt;</div><div class="line">  &lt;![endif]--&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
 
 
             
@@ -330,9 +330,9 @@
             <blockquote>
                 <p>
                 本文地址：
-                <a href="http://yoursite.com/2015/05/12/Echarts使用/" target="_blank" rel="external">http://yoursite.com/2015/05/12/Echarts使用/</a>
+                <a href="https://infinitebig.github.io/2015/05/12/Echarts使用/" target="_blank" rel="external">https://infinitebig.github.io/2015/05/12/Echarts使用/</a>
                 </p>
-                <footer><cite><a href="http://yoursite.com">@Blog</a></cite></footer>
+                <footer><cite><a href="https://infinitebig.github.io">@Blog</a></cite></footer>
             </blockquote>
             </div>
             
@@ -375,7 +375,7 @@ var BLOG_SHARE = {
     title: "Chart.js 中文文档",
     pic: "/img/avatar1.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://yoursite.com/2015/05/12/Echarts使用/index.html"
+    url: "https://infinitebig.github.io/2015/05/12/Echarts使用/index.html"
 };
 </script>
 <div class="global-share" id="global-share">
