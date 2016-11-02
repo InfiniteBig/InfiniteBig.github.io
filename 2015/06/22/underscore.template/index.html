@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>underscore.template模板 | Blog | 游戏诚可贵，coding价更高，若为女朋友，两者皆可抛。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="">
+  <meta name="description" content="underscore.template模板简单了解
+1. 在 &amp;lt;%  %&amp;gt; 之间可以执行js代码；
+2. 在使用=号的时候可以取值123&amp;lt;% $.each(model,function(k,v)&amp;#123; %&amp;gt;    &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;&amp;lt;%=v.name%&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;lt;%=v.age%&amp;gt;&amp;lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="underscore.template模板">
+<meta property="og:url" content="http://yoursite.com/2015/06/22/underscore.template/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="underscore.template模板简单了解
+1. 在 &amp;lt;%  %&amp;gt; 之间可以执行js代码；
+2. 在使用=号的时候可以取值123&amp;lt;% $.each(model,function(k,v)&amp;#123; %&amp;gt;    &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;&amp;lt;%=v.name%&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;lt;%=v.age%&amp;gt;&amp;lt;">
+<meta property="og:updated_time" content="2016-11-02T15:13:31.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="underscore.template模板">
+<meta name="twitter:description" content="underscore.template模板简单了解
+1. 在 &amp;lt;%  %&amp;gt; 之间可以执行js代码；
+2. 在使用=号的时候可以取值123&amp;lt;% $.each(model,function(k,v)&amp;#123; %&amp;gt;    &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;&amp;lt;%=v.name%&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;lt;%=v.age%&amp;gt;&amp;lt;">
+  
+    <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  <meta name="summary" content="null">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/avatar.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">wu runge</h5>
+        <a href="mailto:1216569646@qq.com" title="1216569646@qq.com" class="mail">1216569646@qq.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/InfiniteBig" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/u/5754504521/home" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/test"  >
+              <i class="icon icon-lg icon-link"></i>
+              测试
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>Blog &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">underscore.template模板</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">underscore.template模板</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2015-06-22T14:05:10.000Z" itemprop="datePublished" class="page-time">
+  2015-06-22
+</time>
+
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-underscore.template" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#underscore-template模板简单了解"><span class="post-toc-number">1.</span> <span class="post-toc-text">underscore.template模板简单了解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一步、引包"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一步、引包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二步、上代码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二步、上代码</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="underscore-template模板简单了解"><a href="#underscore-template模板简单了解" class="headerlink" title="underscore.template模板简单了解"></a>underscore.template模板简单了解</h2><blockquote>
+<p><strong>1. 在 </strong>&lt;%  %&gt;<strong> 之间可以执行js代码；</strong></p>
+<p><strong>2. 在使用=号的时候可以取值</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;% $.each(model,<span class="function"><span class="keyword">function</span>(<span class="params">k,v</span>)</span>&#123; %&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=v.name%</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=v.age%</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></div><div class="line">&lt;% &#125;); %&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>3.在使用-号取值的时候  是直接渲染成字符串</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;% %&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%=</span> %&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%-%</span>&gt;</span>  (可防止跨站脚本攻击)！！！！！！</div><div class="line">XSS Cross Site Scripting</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="第一步、引包"><a href="#第一步、引包" class="headerlink" title="第一步、引包"></a>第一步、引包</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"underscore-min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="第二步、上代码"><a href="#第二步、上代码" class="headerlink" title="第二步、上代码"></a>第二步、上代码</h3><blockquote>
+<p><strong>1、准备数据</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> personList = [</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'李四'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'李四'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'李四'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'李四'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'张三'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;,</div><div class="line">        &#123;<span class="attr">name</span>: <span class="string">'李四'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;</div><div class="line">    ]</div></pre></td></tr></table></figure></p>
+<p><strong>2、定义模版</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">'data'</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/template'</span> <span class="attr">id</span>=<span class="string">'template'</span>&gt;</span><span class="javascript"></span></div><div class="line">        &lt;% _.each(model,<span class="function"><span class="keyword">function</span>(<span class="params">v,k</span>)</span>&#123; %&gt;</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%-v.name%</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%-v.age%</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">        &lt;% &#125;); %&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/body&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>3、把数据转换成html（3步）</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取要插入的目标元素节点</span></div><div class="line"><span class="keyword">var</span> template = <span class="built_in">document</span>.querySelector(<span class="string">"#template"</span>);</div><div class="line"><span class="comment">// 利用template方法转换成一个模板方法</span></div><div class="line"><span class="keyword">var</span> templateStr = <span class="built_in">document</span>.querySelector(<span class="string">"#template"</span>).innerHTML;</div><div class="line"> <span class="comment">// 利用template方法转换成一个模板方法</span></div><div class="line"><span class="keyword">var</span> templateFunc = _.template(templateStr);</div><div class="line"><span class="comment">// 利用转化过后的模板方法 转化`html`结构</span></div><div class="line"><span class="keyword">var</span> templateHtml = templateFunc(&#123;<span class="attr">model</span>: personList&#125;);</div><div class="line"><span class="keyword">var</span> html = _.template(template.innerHTML)(&#123;<span class="attr">model</span>: personList&#125;);</div><div class="line"><span class="comment">//渲染到页面中</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'data'</span>).innerHTML = (templateHtml);</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意点：</strong></p>
+</blockquote>
+<ul>
+<li><p>jquery是使用$作为全局变量来调用方法</p>
+</li>
+<li><p>underscore 是使用_作为全局变量来调用方法</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">_.each(array,<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)) </span></div><div class="line"></div><div class="line">与 </div><div class="line"></div><div class="line"><span class="title">$</span>.<span class="title">each</span>(<span class="params">array,function(index,item</span>))</div></pre></td></tr></table></figure>
+<ul>
+<li>回调函数中的对象与索引位置相反</li>
+</ul>
+
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://yoursite.com/2015/06/22/underscore.template/" target="_blank" rel="external">http://yoursite.com/2015/06/22/underscore.template/</a>
+                </p>
+                <footer><cite><a href="http://yoursite.com">@Blog</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2015/07/21/ajax方法详解/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">$.ajax方法详解</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2015/06/12/浅谈NodeJS/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node.js 体验报告——有关 Node.js 的集中吐槽</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+
+
+
+        </div>
+    </div>
+</article>
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "underscore.template模板",
+    pic: "/img/avatar.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://yoursite.com/2015/06/22/underscore.template/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
